@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Music App</title>
+</head>
+
+<body>
+    <audio src="" id="audio"></audio>
+    <main class="site-hero">
+        <div class="container">
+            <div class="music-player">
+                <h1 class="music-name">Song one</h1>
+                <p class="artist-name">Artist</p>
+                <div class="disk"></div>
+
+                <div class="song-slider">
+                    <input type="range" class="seek-bar " value="0">
+                    <span class="current-time">00:00</span>
+                    <span class="duration-time">00:00</span>
+                </div>
+                <div class="controls">
+                    <button class="btn prev-btn"><img src="./images/next.png" width="20" height="20" alt=""></button>
+                    <button class="play-btn pause">
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <button class="btn next-btn"><img src="./images/next.png" width="20" height="20" alt=""></button>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- <script src="./data/data.js"></script> -->
+    <script src="./data/data.js"></script>
+    <script src="./data/app.js"></script>
+</body>
+
+</html>

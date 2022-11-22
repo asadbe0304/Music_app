@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+
+
+}
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero {
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.music-player {
+    padding: 10px;
+    /* padding-bottom: 10px; */
+    margin-top: 80px;
+    width: 300px;
+    /* background: rgb(12, 206, 255); */
+    /* /* background: rgba(33, 1, 83, 0.05); */
+    background: linear-gradient(90deg, #d53369 0%, #daae51 100%); 
+    box-shadow: 0 12px 32px 0 rgba(27, 35, 148, 0.37);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.music-name {
+    margin: 10px 0 0 0;
+    padding: 0;
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    color: #7209b7;
+    text-transform: capitalize;
+}
+
+.artist-name {
+    margin: 10px 0 0 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    color: #640bad;
+    text-transform: capitalize;
+}
+
+.disk {
+    position: relative;
+    display: block;
+    margin: 40px auto;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-image: url(../../../images/im.jpg);
+    background-size: cover;
+    box-shadow: 0 0 10px 10px rgba(27, 35, 148, 0.37);
+}
+
+.disk::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    z-index: 5;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(27, 35, 148, 0.37);
+}
+
+.song-slider {
+    width: 100%;
+    position: relative;
+}
+
+.seek-bar {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 10px;
+    background: #640bad;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.seek-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1px;
+    height: 20px;
+    background: #200536;
+    box-shadow: -400px 0 0 400px #3a0ca3;
+}
+
+.current-time,
+.duration-time {
+    color: #fff;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.duration-time {
+    position: absolute;
+    right: 0;
+}
+
+.controls {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.play-btn {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    background: #000;
+}
+/* .next-btn{
+    color: #640bad;
+}
+.prev-btn{
+    color: #640bad;
+} */
+.play-btn span {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 30px;
+    border-radius: 2px;
+    background: #640bad;
+    transition: .5s ease-in-out;
+}
+
+.play-btn span:nth-child(2) {
+    left: 55%;
+    transform-origin: center;
+}
+
+.play-btn.pause span:nth-child(1) {
+    width: 35%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    border-radius: 0;
+    clip-path: polygon(0 0, 100% 50%, 100% 50%, 0% 100%);
+}
+
+.play-btn.pause span:nth-child(2) {
+    transform: translateY(-50%) scaleY(0);
+}
+
+.play-btn.pause {
+    animation: pulse 4s linear infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0;
+    }
+
+    25% {
+        box-shadow: 0 0 5px 5px rgba(202, 12, 177, 0.8);
+    }
+
+    50% {
+        box-shadow: 0 0 5px 10px rgba(205, 13, 223, 0.8);
+    }
+    75% {
+        box-shadow: 0 0 5px 5px rgba(199, 15, 216, 0.9);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0px rgba(174, 9, 196, 0.9);
+    }
+}
+
+.btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    background-color: #640bad;
+}
+
+.prev-btn {
+    transform: rotateY(-180deg);
+}
+
+.play {
+    animation: role 10s infinite;
+}
+
+@keyframes role {
+    0% {
+        transform: rotate(0) scale(1);
+    }
+
+    /* 10%{
+        transform: rotate(90deg);
+    }
+    20%{
+        transform: rotate(180deg);
+    }
+    30%{
+        transform: rotate(270deg);
+    }
+    40%{
+        transform: rotate(360deg);
+    }
+    50%{
+        transform: rotate(-360deg);
+    }
+    60%{
+        transform: rotate(-270deg);
+    }
+    80%{
+        transform: rotate(-180deg);
+    }
+    90%{
+        transform: rotate(-90deg);
+    } */
+    100% {
+        transform: rotate(360deg) scale(1.2);
+    }
+}
